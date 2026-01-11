@@ -42,7 +42,7 @@ static int ReadInt(string label, int? min = null, int? max = null)
 static void PrintMenu()
 {
     Console.WriteLine();
-    Console.WriteLine("===== PD1 Console EF =====");
+    Console.WriteLine("====== PD1 Console EF ======");
     Console.WriteLine("1) Rādīt visus studentus");
     Console.WriteLine("2) Rādīt visus kursus");
     Console.WriteLine("3) Rādīt visas reģistrācijas (Enrollments)");
@@ -98,7 +98,7 @@ while (true)
         case "1":
         {
             var students = await db.Students.AsNoTracking().OrderBy(s => s.Id).ToListAsync();
-            Console.WriteLine("\n--- STUDENTI ---");
+            Console.WriteLine("\n---- STUDENTI ----");
             if (students.Count == 0) Console.WriteLine("(nav ierakstu)");
             foreach (var s in students)
                 Console.WriteLine($"{s.Id}. {s.FullName} (Age: {s.Age})");
@@ -108,7 +108,7 @@ while (true)
         case "2":
         {
             var courses = await db.Courses.AsNoTracking().OrderBy(c => c.Id).ToListAsync();
-            Console.WriteLine("\n--- KURSI ---");
+            Console.WriteLine("\n---- KURSI ----");
             if (courses.Count == 0) Console.WriteLine("(nav ierakstu)");
             foreach (var c in courses)
                 Console.WriteLine($"{c.Id}. {c.Title} (Credits: {c.Credits})");
@@ -124,7 +124,7 @@ while (true)
                 .OrderBy(e => e.Id)
                 .ToListAsync();
 
-            Console.WriteLine("\n--- REĢISTRĀCIJAS (ENROLLMENTS) ---");
+            Console.WriteLine("\n---- REĢISTRĀCIJAS (ENROLLMENTS) ----");
             if (enrollments.Count == 0) Console.WriteLine("(nav ierakstu)");
             foreach (var e in enrollments)
                 Console.WriteLine($"{e.Id}. {e.Student?.FullName} -> {e.Course?.Title} ({e.EnrolledAt:yyyy-MM-dd})");
@@ -133,7 +133,7 @@ while (true)
 
         case "4":
         {
-            Console.WriteLine("\n--- PIEVIENOT STUDENTU ---");
+            Console.WriteLine("\n---- PIEVIENOT STUDENTU ----");
             var name = ReadRequired("Vārds Uzvārds: ");
             var age = ReadInt("Vecums: ", 1, 120);
 
@@ -145,7 +145,7 @@ while (true)
 
         case "5":
         {
-            Console.WriteLine("\n--- PIEVIENOT KURSU ---");
+            Console.WriteLine("\n---- PIEVIENOT KURSU ----");
             var title = ReadRequired("Kursa nosaukums: ");
             var credits = ReadInt("Kredītpunkti: ", 1, 60);
 
@@ -157,7 +157,7 @@ while (true)
 
         case "6":
         {
-            Console.WriteLine("\n--- PIEVIENOT REĢISTRĀCIJU ---");
+            Console.WriteLine("\n---- PIEVIENOT REĢISTRĀCIJU ----");
 
             // parāda sarakstus, lai vieglāk izvēlēties ID
             var students = await db.Students.AsNoTracking().OrderBy(s => s.Id).ToListAsync();

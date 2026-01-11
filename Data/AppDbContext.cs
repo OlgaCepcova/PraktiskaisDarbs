@@ -16,7 +16,7 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // lai nebūtu dubultie ieraksti vienam studentam tajā pašā kursā
+        // lai nav dubultie ieraksti vienam studentam tajā pašā kursā
         modelBuilder.Entity<Enrollment>()
             .HasIndex(e => new { e.StudentId, e.CourseId })
             .IsUnique();
