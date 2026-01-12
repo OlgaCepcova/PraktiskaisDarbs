@@ -1,0 +1,42 @@
+﻿@model List<PD3_Web.Models.Course>
+
+<div class="mb-3">
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/StudentSearch">Studenti pēc vārda</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/CoursesMinCredits">Kursi min kredīti</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/EnrollmentsByStudent">Reģistrācijas pēc studentId</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/StudentEnrollmentCounts">Studenti + count</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/TopCourses">TOP kursi</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/LatestEnrollments">Pēdējās reģistrācijas</a>
+</div>
+
+<h2>Kursi ar min kredītiem</h2>
+
+<form method="post" class="mb-3">
+    <label class="form-label">Min kredīti:</label>
+    <input type="number" name="minCredits" class="form-control" value="@(ViewBag.MinCredits ?? 1)" min="1" max="60" />
+    <button class="btn btn-primary mt-2">Rādīt</button>
+</form>
+
+@if (Model == null)
+{
+    <p>Ievadi min kredītus un spied “Rādīt”.</p>
+}
+else if (Model.Count == 0)
+{
+    <p>(nav rezultātu)</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr><th>ID</th><th>Nosaukums</th><th>Kredīti</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr><td>@c.Id</td><td>@c.Title</td><td>@c.Credits</td></tr>
+            }
+        </tbody>
+    </table>
+}
+
