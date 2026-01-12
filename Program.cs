@@ -49,6 +49,12 @@ static void PrintMenu()
     Console.WriteLine("4) Pievienot studentu");
     Console.WriteLine("5) Pievienot kursu");
     Console.WriteLine("6) Pievienot reģistrāciju (Students -> Kurss)");
+    Console.WriteLine("7) LINQ: Meklēt studentu pēc vārda");
+    Console.WriteLine("8) LINQ: Kursi ar min kredītiem");
+    Console.WriteLine("9) LINQ: Reģistrācijas pēc StudentId");
+    Console.WriteLine("10) LINQ: Studenti + reģistrāciju skaits");
+    Console.WriteLine("11) LINQ: TOP kursi pēc reģistrāciju skaita");
+    Console.WriteLine("12) LINQ: Pēdējās reģistrācijas");
     Console.WriteLine("0) Iziet");
     Console.WriteLine("==========================");
 }
@@ -194,6 +200,145 @@ while (true)
             Console.WriteLine("Reģistrācija pievienota.");
             break;
         }
+
+        case "7":
+            {
+                Console.WriteLine("\n---- LINQ: MEKLĒT STUDENTU PĒC VĀRDA ----");
+                var q = ReadRequired("Ievadi vārdu vai daļu no vārda: ").ToLower();
+
+                var result = await db.Students.AsNoTracking()
+                    .Where(s => s.FullName.ToLower().Contains(q))
+                    .OrderBy(s => s.FullName)
+                    .Select(s => new { s.Id, s.FullName, s.Age })
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav atrasts)");
+                else
+                    foreach (var s in result)
+                        Console.WriteLine($"{s.Id}. {s.FullName} (Age: {s.Age})");
+
+                break;
+            }
+
+        case "8":
+            {
+                Console.WriteLine("\n---- LINQ: KURSI AR MIN KREDĪTIEM ----");
+                var minCredits = ReadInt("Min kredītpunkti: ", 1, 60);
+
+                var result = await db.Courses.AsNoTracking()
+                    .Where(c => c.Credits >= minCredits)
+                    .OrderByDescending(c => c.Credits)
+                    .Select(c => new { c.Id, c.Title, c.Credits })
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav atrasts)");
+                else
+                    foreach (var c in result)
+                        Console.WriteLine($"{c.Id}. {c.Title} (Credits: {c.Credits})");
+
+                break;
+            }
+
+        case "9":
+            {
+                Console.WriteLine("\n---- LINQ: REĢISTRĀCIJAS PĒC STUDENTID ----");
+                var studentId = ReadInt("Ievadi StudentId: ", 1, int.MaxValue);
+
+                var result = await db.Enrollments.AsNoTracking()
+                    .Include(e => e.Student)
+                    .Include(e => e.Course)
+                    .Where(e => e.StudentId == studentId)
+                    .OrderByDescending(e => e.EnrolledAt)
+                    .Select(e => new
+                    {
+                        e.Id,
+                        Student = e.Student!.FullName,
+                        Course = e.Course!.Title,
+                        e.EnrolledAt
+                    })
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav atrasts)");
+                else
+                    foreach (var e in result)
+                        Console.WriteLine($"{e.Id}. {e.Student} -> {e.Course} ({e.EnrolledAt:yyyy-MM-dd})");
+
+                break;
+            }
+
+        case "10":
+            {
+                Console.WriteLine("\n---- LINQ: STUDENTI + REĢISTRĀCIJU SKAITS ----");
+
+                var result = await db.Students.AsNoTracking()
+                    .Select(s => new
+                    {
+                        s.Id,
+                        s.FullName,
+                        s.Age,
+                        EnrollmentsCount = s.Enrollments.Count
+                    })
+                    .OrderByDescending(x => x.EnrollmentsCount)
+                    .ThenBy(x => x.FullName)
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav ierakstu)");
+                else
+                    foreach (var s in result)
+                        Console.WriteLine($"{s.Id}. {s.FullName} (Age: {s.Age}) | Reģistrācijas: {s.EnrollmentsCount}");
+
+                break;
+            }
+
+        case "11":
+            {
+                Console.WriteLine("\n---- LINQ: TOP KURSI PĒC REĢISTRĀCIJĀM ----");
+
+                var result = await db.Courses.AsNoTracking()
+                    .Select(c => new
+                    {
+                        c.Id,
+                        c.Title,
+                        c.Credits,
+                        EnrollmentsCount = c.Enrollments.Count
+                    })
+                    .OrderByDescending(x => x.EnrollmentsCount)
+                    .ThenByDescending(x => x.Credits)
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav ierakstu)");
+                else
+                    foreach (var c in result)
+                        Console.WriteLine($"{c.Id}. {c.Title} (Credits: {c.Credits}) | Reģistrācijas: {c.EnrollmentsCount}");
+
+                break;
+            }
+
+        case "12":
+            {
+                Console.WriteLine("\n---- LINQ: PĒDĒJĀS REĢISTRĀCIJAS ----");
+
+                var result = await db.Enrollments.AsNoTracking()
+                    .Include(e => e.Student)
+                    .Include(e => e.Course)
+                    .OrderByDescending(e => e.EnrolledAt)
+                    .Take(5)
+                    .Select(e => new
+                    {
+                        e.Id,
+                        Student = e.Student!.FullName,
+                        Course = e.Course!.Title,
+                        e.EnrolledAt
+                    })
+                    .ToListAsync();
+
+                if (result.Count == 0) Console.WriteLine("(nav ierakstu)");
+                else
+                    foreach (var e in result)
+                        Console.WriteLine($"{e.Id}. {e.Student} -> {e.Course} ({e.EnrolledAt:yyyy-MM-dd})");
+
+                break;
+            }
 
         case "0":
             Console.WriteLine("Paldies!");
