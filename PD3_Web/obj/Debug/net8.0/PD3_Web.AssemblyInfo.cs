@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PD3_Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37a90f5b7d509fd81c67d678397bf002abb19780")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44f3ace6e5cb5fed711f2691c38b1706753a4075")]
 [assembly: System.Reflection.AssemblyProductAttribute("PD3_Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PD3_Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

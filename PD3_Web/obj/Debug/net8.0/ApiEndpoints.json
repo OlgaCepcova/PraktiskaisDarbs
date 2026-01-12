@@ -1,1 +1,96 @@
-[]
+[
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "CoursesMinCredits",
+    "RelativePath": "api/QueriesApi/courses/min-credits",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "PD3_Web.Dtos.CoursesMinCreditsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "TopCourses",
+    "RelativePath": "api/QueriesApi/courses/top",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "DeleteEnrollment",
+    "RelativePath": "api/QueriesApi/enrollments/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "EnrollmentsByStudent",
+    "RelativePath": "api/QueriesApi/enrollments/by-student",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "PD3_Web.Dtos.EnrollmentsByStudentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "LatestEnrollments",
+    "RelativePath": "api/QueriesApi/enrollments/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "StudentEnrollmentCounts",
+    "RelativePath": "api/QueriesApi/students/enrollment-counts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PD3_Web.Api.QueriesApiController",
+    "Method": "StudentSearch",
+    "RelativePath": "api/QueriesApi/students/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "PD3_Web.Dtos.StudentSearchRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
