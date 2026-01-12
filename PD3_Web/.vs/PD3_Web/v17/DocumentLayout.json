@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|c:\\users\\olga2\\source\\repos\\olgacepcova\\praktiskaisdarbs\\pd3_web\\api\\queriesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|solutionrelative:api\\queriesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|c:\\users\\olga2\\source\\repos\\olgacepcova\\praktiskaisdarbs\\pd3_web\\dtos\\enrollmentsbystudentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|solutionrelative:dtos\\enrollmentsbystudentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|c:\\users\\olga2\\source\\repos\\olgacepcova\\praktiskaisdarbs\\pd3_web\\dtos\\coursesmincreditsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|solutionrelative:dtos\\coursesmincreditsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|c:\\users\\olga2\\source\\repos\\olgacepcova\\praktiskaisdarbs\\pd3_web\\dtos\\studentsearchrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|solutionrelative:dtos\\studentsearchrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|c:\\users\\olga2\\source\\repos\\olgacepcova\\praktiskaisdarbs\\pd3_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378111EB-5C4A-B81F-E716-A4B4A8DF523D}|PD3_Web.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QueriesApiController.cs",
+              "DocumentMoniker": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Api\\QueriesApiController.cs",
+              "RelativeDocumentMoniker": "Api\\QueriesApiController.cs",
+              "ToolTip": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Api\\QueriesApiController.cs",
+              "RelativeToolTip": "Api\\QueriesApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:34:13.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnrollmentsByStudentRequest.cs",
+              "DocumentMoniker": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\EnrollmentsByStudentRequest.cs",
+              "RelativeDocumentMoniker": "Dtos\\EnrollmentsByStudentRequest.cs",
+              "ToolTip": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\EnrollmentsByStudentRequest.cs",
+              "RelativeToolTip": "Dtos\\EnrollmentsByStudentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:32:55.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CoursesMinCreditsRequest.cs",
+              "DocumentMoniker": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\CoursesMinCreditsRequest.cs",
+              "RelativeDocumentMoniker": "Dtos\\CoursesMinCreditsRequest.cs",
+              "ToolTip": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\CoursesMinCreditsRequest.cs",
+              "RelativeToolTip": "Dtos\\CoursesMinCreditsRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:32:13.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentSearchRequest.cs",
+              "DocumentMoniker": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\StudentSearchRequest.cs",
+              "RelativeDocumentMoniker": "Dtos\\StudentSearchRequest.cs",
+              "ToolTip": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Dtos\\StudentSearchRequest.cs",
+              "RelativeToolTip": "Dtos\\StudentSearchRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:31:15.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\olga2\\source\\repos\\OlgaCepcova\\PraktiskaisDarbs\\PD3_Web\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:24:46.186Z"
             }
           ]
         }
