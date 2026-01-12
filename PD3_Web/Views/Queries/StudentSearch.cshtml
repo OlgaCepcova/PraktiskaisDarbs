@@ -1,0 +1,43 @@
+﻿@model List<PD3_Web.Models.Student>
+
+<div class="mb-3">
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/StudentSearch">Studenti pēc vārda</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/CoursesMinCredits">Kursi min kredīti</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/EnrollmentsByStudent">Reģistrācijas pēc studentId</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/StudentEnrollmentCounts">Studenti + count</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/TopCourses">TOP kursi</a>
+    <a class="btn btn-outline-secondary btn-sm" href="/Queries/LatestEnrollments">Pēdējās reģistrācijas</a>
+</div>
+
+
+<h2>Meklēt studentu pēc vārda</h2>
+
+<form method="post" class="mb-3">
+    <label class="form-label">Vārda daļa:</label>
+    <input name="namePart" class="form-control" value="@ViewBag.NamePart" />
+    <button class="btn btn-primary mt-2">Meklēt</button>
+</form>
+
+@if (Model == null)
+{
+    <p>Ievadi vārda daļu un spied “Meklēt”.</p>
+}
+else if (Model.Count == 0)
+{
+    <p>(nav rezultātu)</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr><th>ID</th><th>Vārds</th><th>Vecums</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr><td>@s.Id</td><td>@s.FullName</td><td>@s.Age</td></tr>
+            }
+        </tbody>
+    </table>
+}
+
